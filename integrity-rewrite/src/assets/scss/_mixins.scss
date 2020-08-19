@@ -1,0 +1,138 @@
+// wrapper
+@mixin wrapper($body-width) {
+  width: $body-width;
+  margin: 0 auto;
+}
+
+@mixin arrow($color, $arrwidth:8px, $arrheight:8px) {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: $arrwidth;
+  height: $arrheight;
+  border: 1px solid $color;
+  border-right: 0;
+  border-top: 0;
+  pointer-events: none;
+  transform: rotate(-45deg);
+}
+
+// Clearfix
+@mixin clearfix() {
+
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Center-block
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Box-shadow
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+
+// Text overflow
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Text-justify
+@mixin text-justify() {
+  text-align: justify;
+  text-justify: inter-ideograph; //IE支持属性
+}
+
+// Text hide
+@mixin text-hide() {
+  font: "0/0"a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder) {
+
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  // Safari and Chrome
+}
+
+// Forms
+@mixin form-control-focus($color: $input-border-focus) {
+  &:focus {
+    border-color: $color;
+    outline: 0;
+  }
+}
+
+// Single side border-radius
+@mixin border-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-radius: $radius;
+  }
+}
+
+@mixin border-top-radius($radius) {
+  @if $enable-rounded {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+}
+
+@mixin border-right-radius($radius) {
+  @if $enable-rounded {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+}
+
+@mixin border-bottom-radius($radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+}
+
+@mixin border-left-radius($radius) {
+  @if $enable-rounded {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+}

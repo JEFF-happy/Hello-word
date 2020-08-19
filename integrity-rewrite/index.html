@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" class="fullpage">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="address=no" name="format-detection"/>
+  <meta name="apple-mobile-web-app-capable" content="no" />
+
+  <title>court-attendance-mobile</title>
+  <meta name="keywords" content="" />  
+  <meta name="description" content="" /> 
+  <meta name="author" content="HOMOLO"> 
+  <link rel="apple-touch-icon-precomposed" href="" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="" />
+  <link rel="stylesheet" href="src/assets/scss/common.scss">
+  <!--STYLE_PLACEHOLDER-->
+</head>
+<body class="theme-white">
+  <div class="statusbar-overlay"></div>
+  <!-- Panels overlay-->
+  <div class="panel-overlay"></div>
+  <div class="views">
+    <div class="view view-main">
+      
+      <!-- 头部标题 -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <!-- <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>返回</span></a></div> -->
+          <div class="center sliding">全国律师诚信信息公示平台</div>
+          <!-- <div class="right">
+            <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- 内容部分 -->
+      <link rel="import" href="src/pages/index/index.html?__inline">
+      
+      <!-- 底部导航栏 -->
+      <div class="toolbar tabbar tabbar-labels" id="bottom-bar">
+        <div class="toolbar-inner">
+            <a href="/index" class="link active"><i class="iconfont iconhome1"></i><span class="tabbar-label">首页</span></a>
+            <a href="/search" class="link"><i class="iconfont iconadvanced_search1"></i><span class="tabbar-label">高级检索</span></a>
+            <a href="#" class="link"><i class="iconfont iconannouncement1"></i><span class="tabbar-label">信息公告</span></a>
+            <a href="#tab4" class="link"><i class="iconfont iconinformation_errata1"></i><span class="tabbar-label">信息勘误</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="lib/mod.js"></script>
+  <script>
+
+    app = require('src/js/app');
+
+    app.set.init();
+
+
+    var myApp = app.framework.init();
+    var $$ = Dom7;
+
+    $$('.link').click(function(){
+      $$(this).addClass('active').siblings().removeClass('active')
+    });
+  </script>
+  <!--SCRIPT_PLACEHOLDER-->
+</body>
+</html>
