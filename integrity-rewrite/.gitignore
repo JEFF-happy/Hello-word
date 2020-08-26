@@ -1,8 +1,0 @@
-*/.DS_Store
-npm-debug.log
-.idea/*
-*/.idea
-*/.project
-dist/*
-node_modules/
-court-attendance-mobile/
